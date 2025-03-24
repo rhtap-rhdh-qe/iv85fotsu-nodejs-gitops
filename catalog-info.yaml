@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: iv85fotsu-nodejs-gitops
+  description: This is GitOps manifest for iv85fotsu-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=iv85fotsu-nodejs
+    backstage.io/kubernetes-id: iv85fotsu-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: iv85fotsu-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:iv85fotsu-nodejs
